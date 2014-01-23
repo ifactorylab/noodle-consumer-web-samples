@@ -22,7 +22,7 @@ $ node code/script/web-server.js
 
 #### Merriweather Cafe
 ```
-http://localhost:8000/merriweathercafe/#home
+http://localhost:8000/merriweathercafe/welcome.html
 ```
 
 #### SIPS AND BITES
