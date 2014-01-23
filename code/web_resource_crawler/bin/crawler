@@ -1,0 +1,53 @@
+#!/usr/bin/python -tt
+# -*- coding: utf-8 -*-
+#
+# Copyright (C) 2013 iFactory Lab Ltd.
+# All rights reserved.
+#
+# web resource crawler
+#
+# Author: Min Kim (minsikzzang@gmail.com)
+#
+
+"""Executable file for WRC(web resource crawler).
+
+"""
+
+__author__ = 'minsikzzang@gmail.com (Min Kim)'
+
+import optparse
+import os
+
+cmdline = optparse.OptionParser(usage="usage: %prog [options] crawler start -d repository_path",
+    description="Start crawler for the given directory")
+cmdline.add_option('--directory', "-d", action='store', help='Directory for web document stored')
+                   
+def main():
+  options, args = cmdline.parse_args()
+  if len(args) < 1:
+    cmdline.print_help()
+    cmdline.error("Supply at least one argument: start")
+  
+  if not options.directory:
+    cmdline.print_help()
+    cmdline.error("Supply at least one option: web document repository path")
+    
+  repo = options.directory
+  for root, dirs, files in os.walk(repo):    
+    for f in files:
+      token = f.split(".")
+      if (len(token) > 1 and token[1] != "jpg") or f == "css":        
+        path = os.path.join(root, f)
+        print path
+
+        f = open(path, "r+")
+        content = f.read()
+        content = content.replace("\"//", "\"http://")
+        content = content.replace("'//", "'http://")
+        f.seek(0, 0)
+        f.write(content)
+        f.close()        
+      
+  
+if __name__ == "__main__":
+  main()
