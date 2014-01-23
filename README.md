@@ -1,35 +1,42 @@
 # Project Noodle Consumer website design samples
 
-## Requirements
+### Requirements
 
-### NodeJS
-[Install from installer](http://nodejs.org/download/)
+#### NodeJS
+Download installer from [NodeJS Website](http://nodejs.org/download/), and follow the instruction
 
-## How to start?
+### Get started
 
-### Clone the project
+#### Clone the project
 ```
 $ git@github.com:ifactorylab/project-noodle-consumer-web-samples.git
 ```
 
-### Run webserver.js with nodeJS
+#### Run webserver.js with nodeJS
 ```
 $ cd project-noodle-consumer-web-samples
 $ node code/script/web-server.js
 ```
 
-## website urls
+### Website samples
 
-### Merriweather Cafe
+#### Merriweather Cafe
+```
 http://localhost:8000/merriweathercafe/#home
+```
 
-### SIPS AND BITES
+#### SIPS AND BITES
+```
 http://localhost:8000/sipsandbitesnyc/welcome.html
+```
 
-### LE PEAK
+#### LE PEAK
+```
 http://localhost:8000/lepeak/welcome.html
+```
 
-### MARQUEE
+#### MARQUEE
+```
 http://localhost:8000/marquee/welcome.html
-
+```
 
